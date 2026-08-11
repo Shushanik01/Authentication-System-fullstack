@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 
 export async function connectDB(){
-    if (!process.env.MONGO_URI) {
-        throw new Error('MONGO_URI is not defined');
+    if (!process.env.MONGODB_URI) {
+        throw new Error('MONGODB_URI is not defined');
     }
 
     try {
-        await mongoose.connect(process.env.MONGO_URI)
+        await mongoose.connect(process.env.MONGODB_URI)
         console.log('DB connected succesfully');
 
     }catch(err){
